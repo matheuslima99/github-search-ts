@@ -1,9 +1,10 @@
-import GlobalStyles from './styles/global';
+import GlobalStyles  from './styles/global';
+import { Router } from './router';
 
 function App() {
   return (
     <>
-      <div>Hello World</div>
+      <Router />
       <GlobalStyles />
     </>
   );

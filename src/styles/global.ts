@@ -18,5 +18,4 @@ export default createGlobalStyle`
     color: #333;
     font-family: 'Roboto', sans-serif;
   }
-
 `;
