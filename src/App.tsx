@@ -1,11 +1,11 @@
-import GlobalStyles  from './styles/global';
 import { Router } from './router';
+import { GlobalSyles } from './styles/global';
 
 function App() {
   return (
     <>
       <Router />
-      <GlobalStyles />
+      <GlobalSyles />
     </>
   );
 }

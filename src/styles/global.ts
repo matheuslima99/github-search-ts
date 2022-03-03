@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export default createGlobalStyle`
+export const GlobalSyles =  createGlobalStyle`
   *{
     margin: 0;
     padding: 0;
@@ -13,9 +13,8 @@ export default createGlobalStyle`
   }
 
   body{
-    background: #f5f5f5;
+    background: ${props => props.theme.colors.background};
     font-size: 1.6rem;
-    color: #333;
     font-family: 'Roboto', sans-serif;
   }
 `;
