@@ -7,17 +7,31 @@ export const Container = styled.div`
   justify-content: center;
   padding: 100px 0px;
   margin: 0 auto;
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 0;
+  }
 `;
 
 export const Avatar = styled.img`
   width: 180px;
   border-radius: 50%;
+
+  @media (max-width: 950px) {
+    margin-bottom: 15px;
+  }
 `;
 
 export const Wrapper = styled.div`
   margin: 0px 35px;
   max-width: 500px;
   width: 100%;
+
+  @media (max-width: 950px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const Username = styled.h2`
@@ -62,7 +76,7 @@ export const InfoReposArea = styled.div`
 export const TextReposArea = styled.span`
   display: flex;
   align-items: center;
-  font-size: 2.0rem;
+  font-size: 2rem;
   justify-content: center;
   color: ${props => props.theme.colors.text};
   margin-top: 5px;

@@ -3,10 +3,10 @@ import { IoLocationSharp } from 'react-icons/io5';
 import { RiStackshareLine } from 'react-icons/ri';
 import { MdWork } from 'react-icons/md';
 import { BsPeopleFill, BsPeople, BsFillStarFill } from 'react-icons/bs';
-import { useTheme } from '../../../../context/Theme';
+import { useTheme } from 'styled-components';
 
 export const UserInfo = () => {
-  const { theme } = useTheme();
+  const { colors } = useTheme();
 
   return (
     <C.Container>
@@ -17,27 +17,27 @@ export const UserInfo = () => {
 
         <C.TextInfoArea>
           <C.TextInfo>
-            <IoLocationSharp color={theme.colors.secondary} size={20} />
+            <IoLocationSharp color={colors.secondary} size={20} />
             <C.Text>Alguma coisa</C.Text>
           </C.TextInfo>
 
           <C.TextInfo>
-            <MdWork color={theme.colors.secondary} size={20} />
+            <MdWork color={colors.secondary} size={20} />
             <C.Text>Universidade Federal da paraiba</C.Text>
           </C.TextInfo>
 
           <C.TextInfo>
-            <BsPeopleFill color={theme.colors.secondary} size={20} />
+            <BsPeopleFill color={colors.secondary} size={20} />
             <C.Text>4700</C.Text>
           </C.TextInfo>
 
           <C.TextInfo>
-            <BsPeople color={theme.colors.secondary} size={20} />
+            <BsPeople color={colors.secondary} size={20} />
             <C.Text>233</C.Text>
           </C.TextInfo>
 
           <C.TextInfo>
-            <BsFillStarFill color={theme.colors.secondary} size={20} />
+            <BsFillStarFill color={colors.secondary} size={20} />
             <C.Text>30</C.Text>
           </C.TextInfo>
         </C.TextInfoArea>
@@ -47,7 +47,7 @@ export const UserInfo = () => {
         Total Respositories
         <C.TextReposArea>
           90
-          <RiStackshareLine size={25} color={theme.colors.secondary} />
+          <RiStackshareLine size={25} color={colors.secondary} />
         </C.TextReposArea>
       </C.InfoReposArea>
     </C.Container>
