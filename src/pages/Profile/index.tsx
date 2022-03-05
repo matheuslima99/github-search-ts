@@ -3,25 +3,25 @@ import { useParams } from 'react-router-dom';
 import { Header } from './components/Header';
 import { UserInfo } from './components/UserInfo';
 import { ReposCard } from './components/ReposCard';
-import { useState } from 'react';
+import { useRequest } from '../../hooks/useRequest';
+
+type User = {
+  login: string;
+};
 
 export const Profile = () => {
-  const params = useParams();
+  const { data: user } = useRequest<User>('users/matheuslima99');
 
-  const [repositories, setRepositories] = useState([
-    { key: 1 },
-    { key: 1 },
-    { key: 1 },
-  ]);
+  console.log(user);
 
   return (
     <C.Container>
       <Header />
       <UserInfo />
       <C.ReposArea>
-        {repositories.map((item, index) => (
+        {/* {repositories?.map((item, index) => (
           <ReposCard key={index} />
-        ))}
+        ))} */}
       </C.ReposArea>
     </C.Container>
   );

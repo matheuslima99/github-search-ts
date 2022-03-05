@@ -7,6 +7,10 @@ export const Container = styled.div`
   @media (max-width: 800px) {
     padding: 30px;
   }
+
+  @media (max-width: 800px) {
+    padding: 30px;
+  }
 `;
 
 export const ReposArea = styled.div`
