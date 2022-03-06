@@ -4,36 +4,41 @@ import { RiStackshareLine } from 'react-icons/ri';
 import { MdWork } from 'react-icons/md';
 import { BsPeopleFill, BsPeople, BsFillStarFill } from 'react-icons/bs';
 import { useTheme } from 'styled-components';
+import { User } from '../../../../types/User';
 
-export const UserInfo = () => {
+type Props = {
+  data?: User;
+};
+
+export const UserInfo = ({ data }: Props) => {
   const { colors } = useTheme();
 
   return (
     <C.Container>
-      <C.Avatar src='https://avatars.githubusercontent.com/u/75329153?v=4' />
+      <C.Avatar src={data?.avatar_url} />
       <C.Wrapper>
-        <C.Username>Matheus Lima</C.Username>
-        <C.Social>@matheuslima99</C.Social>
+        <C.Username>{data?.name}</C.Username>
+        <C.Social>@{data?.login}</C.Social>
 
         <C.TextInfoArea>
           <C.TextInfo>
             <IoLocationSharp color={colors.secondary} size={20} />
-            <C.Text>Alguma coisa</C.Text>
+            <C.Text>{data?.location}</C.Text>
           </C.TextInfo>
 
           <C.TextInfo>
             <MdWork color={colors.secondary} size={20} />
-            <C.Text>Universidade Federal da paraiba</C.Text>
+            <C.Text>{data?.company}</C.Text>
           </C.TextInfo>
 
           <C.TextInfo>
             <BsPeopleFill color={colors.secondary} size={20} />
-            <C.Text>4700</C.Text>
+            <C.Text>{data?.followers}</C.Text>
           </C.TextInfo>
 
           <C.TextInfo>
             <BsPeople color={colors.secondary} size={20} />
-            <C.Text>233</C.Text>
+            <C.Text>{data?.following}</C.Text>
           </C.TextInfo>
 
           <C.TextInfo>
@@ -46,7 +51,7 @@ export const UserInfo = () => {
       <C.InfoReposArea>
         Total Respositories
         <C.TextReposArea>
-          90
+          {data?.public_repos}
           <RiStackshareLine size={25} color={colors.secondary} />
         </C.TextReposArea>
       </C.InfoReposArea>

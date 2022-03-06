@@ -4,24 +4,25 @@ import { Header } from './components/Header';
 import { UserInfo } from './components/UserInfo';
 import { ReposCard } from './components/ReposCard';
 import { useRequest } from '../../hooks/useRequest';
-
-type User = {
-  login: string;
-};
+import { User } from '../../types/User';
+import { Repository } from '../../types/Repository';
 
 export const Profile = () => {
-  const { data: user } = useRequest<User>('users/matheuslima99');
+  const params = useParams();
 
-  console.log(user);
+  const { data: user } = useRequest<User>(`users/${params.username}`);
+  const { data: repositories } = useRequest<Repository[]>(
+    `users/${params.username}/repos`
+  );
 
   return (
     <C.Container>
       <Header />
-      <UserInfo />
+      <UserInfo data={user as User} />
       <C.ReposArea>
-        {/* {repositories?.map((item, index) => (
-          <ReposCard key={index} />
-        ))} */}
+        {repositories?.map((item, index) => (
+          <ReposCard key={index} data={item} />
+        ))}
       </C.ReposArea>
     </C.Container>
   );

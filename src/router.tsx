@@ -6,6 +6,6 @@ import { Profile } from './pages/Profile';
 export const Router = () => (
   <Routes>
     <Route path='/' element={<Home />} />
-    <Route path='/:user' element={<Profile />} />
+    <Route path='/:username' element={<Profile />} />
   </Routes>
 );

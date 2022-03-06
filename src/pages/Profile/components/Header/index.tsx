@@ -9,7 +9,7 @@ export const Header = () => {
   const navigate = useNavigate();
 
   const handleBackButton = () => {
-    navigate(-1);
+    navigate('/');
   };
 
   return (
