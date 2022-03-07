@@ -20,7 +20,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/matheuslima99/github-search-ts">
-    <img src="./src/assets/logo-horizontal.svg" alt="Logo" width="80" height="80">
+    <img src="./src/assets/logo-vertical.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Github Search - React JS</h3>
