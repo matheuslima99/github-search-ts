@@ -3,13 +3,13 @@ import Switch from 'react-switch';
 import { useTheme } from '../../context/Theme';
 
 export const SwitchButton = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { state, toggleTheme } = useTheme();
 
   return (
     <C.Container>
       <Switch
         onChange={() => toggleTheme()}
-        checked={theme.title === 'light' ? true : false}
+        checked={state.title === 'light' ? true : false}
         checkedIcon={<span>🌞</span>}
         uncheckedIcon={<span>🌛</span>}
         onColor='#515151'

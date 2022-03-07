@@ -1,11 +1,12 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext } from 'react';
+import { usePersistedState } from '../hooks/usePersistedState';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 import dark from '../styles/themes/dark';
 import light from '../styles/themes/light';
 
 interface ThemeContextData {
   toggleTheme(): void;
-  theme: DefaultTheme;
+  state: DefaultTheme;
 }
 
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
@@ -13,20 +14,20 @@ const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
 export const useTheme = () => useContext(ThemeContext);
 
 export const CustomThemeProvider: React.FC = ({ children }) => {
-  const [theme, setTheme] = useState<DefaultTheme>(dark);
+  const { state, setState } = usePersistedState<DefaultTheme>('@Theme', light);
 
   const toggleTheme = () => {
-    theme.title === 'light' ? setTheme(dark) : setTheme(light);
+    state.title === 'light' ? setState(dark) : setState(light);
   };
 
   return (
     <ThemeContext.Provider
-      value={{
-        theme,
+      value={{ 
+        state,
         toggleTheme,
       }}
     >
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={state}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   );
 };

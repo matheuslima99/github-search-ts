@@ -39,6 +39,7 @@ export const Home = () => {
           placeholder='Enter user name'
           value={username}
           onChange={handleChangeName}
+          autoFocus
         />
         <C.SearchButton onClick={handleSearchButton}>Search</C.SearchButton>
         <SwitchButton />
