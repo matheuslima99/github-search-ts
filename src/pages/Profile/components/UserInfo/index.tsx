@@ -2,7 +2,7 @@ import * as C from './styles';
 import { IoLocationSharp } from 'react-icons/io5';
 import { RiStackshareLine } from 'react-icons/ri';
 import { MdWork } from 'react-icons/md';
-import { BsPeopleFill, BsPeople, BsFillStarFill } from 'react-icons/bs';
+import { BsPeopleFill, BsPeople } from 'react-icons/bs';
 import { useTheme } from 'styled-components';
 import { User } from '../../../../types/User';
 
@@ -23,7 +23,7 @@ export const UserInfo = ({ data }: Props) => {
         <C.TextInfoArea>
           <C.TextInfo>
             <IoLocationSharp color={colors.secondary} size={20} />
-            <C.Text>{data?.location}</C.Text>
+            <C.Text>{data?.location ?? 'Sem informação'}</C.Text>
           </C.TextInfo>
 
           <C.TextInfo>
@@ -39,11 +39,6 @@ export const UserInfo = ({ data }: Props) => {
           <C.TextInfo>
             <BsPeople color={colors.secondary} size={20} />
             <C.Text>{data?.following}</C.Text>
-          </C.TextInfo>
-
-          <C.TextInfo>
-            <BsFillStarFill color={colors.secondary} size={20} />
-            <C.Text>30</C.Text>
           </C.TextInfo>
         </C.TextInfoArea>
       </C.Wrapper>
